@@ -5,11 +5,8 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
     /**
-     *
      * @author
-     *
-     * @description  a collecting frame for app constructing 
-     *
+     * @description a collecting frame for app constructing
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
