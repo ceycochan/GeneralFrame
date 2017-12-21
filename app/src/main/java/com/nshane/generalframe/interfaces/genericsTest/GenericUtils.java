@@ -1,4 +1,4 @@
-package com.nshane.generalframe.interfaces.generics;
+package com.nshane.generalframe.interfaces.genericsTest;
 
 /**
  * Created by bryan on 2017-12-20.
