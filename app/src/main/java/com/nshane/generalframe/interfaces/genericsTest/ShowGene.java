@@ -6,11 +6,4 @@ package com.nshane.generalframe.interfaces.genericsTest;
 
 public class ShowGene {
 
-    public static void getGene(){
-        GenericUtils<Student> g = new GenericUtils<>();
-        g.setObject(new Student());
-        Teacher teacher = g.getObject();
-    }
-
-
 }

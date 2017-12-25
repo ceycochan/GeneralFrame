@@ -1,3 +1,346 @@
 <resources>
-    <string name="app_name">GeneralFrame</string>
+    <string name="app_name">MeetU</string>
+    <string name="facebook_app_id">754394394741488</string>
+    - <!--  <string name="facebook_app_id">1346420092122366</string>
+  -->
+    <string name="fb_login_protocol_scheme">fb754394394741488</string>
+    - <!-- <string name="fb_login_protocol_scheme">fb1346420092122366</string>
+  -->
+    <string name="tab_home">Home</string>
+    <string name="tab_rank">Ranking</string>
+    <string name="title_rank">Dail Ranking</string>
+    <string name="tab_setting">Setting</string>
+    <string name="tab_my">Me</string>
+    <string name="hint_feedback">Write down your feedback and suggestions</string>
+    <string name="btn_gold">Active Rank</string>
+    <string name="btn_spend">Follow Rank</string>
+    <string name="btn_favorit">Lucky Show</string>
+    <string name="btn_follow">Follow</string>
+    <string name="btn_my">Bottler</string>
+    <string name="about_version">Version</string>
+    <string name="about_update">Check Update</string>
+    <string name="set_about">About us</string>
+    <string name="set_feedback">Feedback</string>
+    <string name="set_privacy">Privacy Policy</string>
+    <string name="about_instruction">Use rule</string>
+    <string name="tb_about_activity">About us</string>
+    <string name="tb_feedback_activity">Feedback</string>
+    <string name="tb_instruction_activity">Use rule</string>
+    <string name="login_success_tip">Login Success</string>
+    <string name="login_cancel_tip">login Canceled</string>
+    <string name="btn_bottle_throw">Throw</string>
+    <string name="btn_bottle_pick">Pick</string>
+    <string name="tb_about_privacy">Privacy Policy</string>
+    <string name="set_share">Share</string>
+    <string name="share">Share to</string>
+    <string name="set_star">Give us Five star</string>
+    <string name="instruction_coin_gain">Get Coins:\n Purchase \n First login \n Throw bottle \n Daily login(only first time per day) \n Giveaway \n Daily Share \n Lucky draw \n Watch AD Video \n Post \n Create purchase gallary </string>
+    <string name="instruction_coin_consume">Cost Coins:\n Lucky draw \n Giveaway \n Purchase gallary</string>
+
+    <string name="link_home">
+  <a href="http://www.meetu.co/">Official Website</a>
+  </string>
+
+    <string name="link_facebook">
+  <a href="https://www.facebook.com/MeetU.co/">Facebook</a>
+  </string>
+    <string name="facebook_login">Facebook Login</string>
+    <string name="feedback">Feedback</string>
+    <string name="pay_dialog_title">Need More Coins</string>
+    <string name="pay_dialog_bug_tip">Purchase</string>
+    <string name="pay_dialog_gold_num">Coin Balance：</string>
+    <string name="pay_dialog_gold_num_def">0</string>
+    <string name="pay_dialog_gold_num_1">100</string>
+    <string name="pay_dialog_gold_num_2">250</string>
+    <string name="pay_dialog_gold_num_3">800</string>
+    <string name="pay_dialog_gold_num_4">2000</string>
+    <string name="pay_dialog_gold_ad">Get Coins For Free</string>
+    <string name="pay_dialog_gold_bug_1">$1</string>
+    <string name="pay_dialog_gold_bug_2">$2</string>
+    <string name="pay_dialog_gold_bug_3">$5</string>
+    <string name="pay_dialog_gold_bug_4">$10</string>
+    <string name="pay_dialog_btn_cancel">Cancel</string>
+    <string name="pay_dialog_btn_ok">Sure</string>
+    <string name="rank_user_name">NickName</string>
+    <string name="rank_user_gold_num">1200</string>
+    <string name="instruction_header">MeetU Rules for obtaining and using coins</string>
+    <string name="reply">Reply</string>
+    <string name="throw_out">Throw Back</string>
+    <string name="complaint">Report</string>
+    <string name="commit">Submit</string>
+    <string name="tv_disclaimer">\n * prohibited publication of pornographic, violence, horror video, pictures or text, once found a permanent Title \n prohibited the use of non normal means to get coins, once found a permanent Title \n rule above all the final interpretation of all MeetU developers.</string>
+    <string name="click_thow">Click to throw bottle</string>
+    <string name="nothing_bottle">No bottle was picked</string>
+    <string name="my_address_default">UNKOWN</string>
+    <string name="just_recently">Just recently</string>
+    <string name="ten_minute">Ten minutes ago</string>
+    <string name="half_hour">Half an hour ago</string>
+    <string name="one_hour">An hour ago</string>
+    <string name="two_hour">Two hours ago</string>
+    <string name="three_hour">Three hours ago</string>
+    <string name="today">Today</string>
+    <string name="yestoday">Yesterday</string>
+    <string name="threedays">Three days ago</string>
+    <string name="fourdays">Four days ago</string>
+    <string name="month">This month</string>
+    <string name="month_ago">A month ago</string>
+
+
+    <!--iphone，5coins，200coins ，1$ amazon gift card，100 coins，500 coins， thanks-->
+    <string name="luck_50coins">50</string>
+    <string name="luck_1amazon_card">1$ gift card</string>
+    <string name="luck_100coins">100</string>
+    <string name="luck_10coins">10</string>
+    <string name="luck_500coins">500</string>
+    <string name="luck_thanks">thanks</string>
+    <string name="luck_10amazon_card">10$ gift card</string>
+    <string name="luck_5coins">5</string>
+    <string name="luck_iphone">iphone X</string>
+
+
+    <string name="luck_title">Lucky draw</string>
+    <string name="about_luckpan">Lucky Draw</string>
+
+    <string name="luck_rule">Lucky draw rules\n Every lucky draw costs 5 coins\n Every lucky draw has a chance to win any of the following prizes:\n * 5 Coins\n * 10 Coins\n * 50 Coins\n * 100 Coins\n * Amazon 1$ gift card\n * Amazon 10$ gift card\n * iPhone X</string>
+    <string name="list_footer_loading">Loading...</string>
+    <string name="list_footer_network_error">Click Loading</string>
+    <string name="list_footer_end">No More Data</string>
+    <string name="str_network_error">Network Error</string>
+    <string name="label_follow_need_coin">Subscriptions to this user will cost some coins and \n subscriptions will be successful. The bottle throwed by this user will notify you in time</string>
+    <string name="confirm">Sure</string>
+    - <!-- <string name="cancel">取消</string>
+  -->
+    <string name="coin_not_enough">Need More Coins</string>
+    <string name="buy_coin">Purchase</string>
+    <string name="coin_balance">Coin balance:</string>
+    <string name="pager_loading">Loading...</string>
+    <string name="hint_email">Your Email</string>
+    <string name="tv_notification_title">System Notification</string>
+    <string name="tip_app_no_update">This is the latest version</string>
+    <string name="luckdraw_dialog_title">Congratulations</string>
+    <string name="luckdraw_dialog_content_deafault">you have won %s</string>
+
+    <string name="luckdraw_dialog_content_luck_1">1 Coin</string>
+    <string name="luckdraw_dialog_content_luck_5">5 Coins</string>
+    <string name="luckdraw_dialog_content_luck_10">10 Coins</string>
+    <string name="luckdraw_dialog_content_luck_50">50 Coins</string>
+    <string name="luckdraw_dialog_content_luck_100">100 Coins</string>
+    <string name="luckdraw_dialog_content_luck_200">200 Coins</string>
+    <string name="luckdraw_dialog_content_luck_500">500 Coins</string>
+    <string name="luckdraw_dialog_content_luck_1amazon_card">1$ gift card</string>
+    <string name="luckdraw_dialog_content_luck_10amazon_card">10$ gift card</string>
+    <string name="luckdraw_dialog_content_luck_iphone">iphone X</string>
+    <string name="luckdraw_dialog_content_luck_thanks">thanks</string>
+
+
+    <string name="rank_operation_error">Oops, Something wrong, Please try again later</string>
+    <string name="pay_tip_watch_ad">There is no video now. Please see it later</string>
+    <string name="pay_tip_pay_fail">Oops, Something wrong, Please try again later</string>
+    <string name="pay_tip_pay_success">Got coins successful</string>
+    <string name="login_instruction">You can modify your Personal information from  Setting > Personal information </string>
+    <string name="toast_user_not_found">User not exist</string>
+    <string name="toast_start_to_chat">Activating chat now...</string>
+    <string name="toast_coin_share_success">Coins give away success</string>
+    <string name="toast_coin_share_fail">Coins give away failed</string>
+    <string name="toast_feedback_success">Feedback success</string>
+    <string name="toast_feedback_fail">Feedback failed</string>
+    <string name="toast_follow_fail">Follow failed</string>
+    <string name="toast_follow_suc">Follow success</string>
+    <string name="toast_unfollow_fail">Cancel failed</string>
+    <string name="toast_unfollow_suc">Cancel success</string>
+    <string name="toast_like_suc">Liked success</string>
+    <string name="toast_like_fail">Liked failed</string>
+    <string name="toast_bottle_null">Bottle not exist</string>
+    <string name="toast_bottle_send_fail">Throw failed, try again</string>
+    <string name="toast_download_image">Start downloading picture</string>
+    <string name="toast_save_suc">Save success</string>
+    <string name="add_image">Add Picture</string>
+    <string name="camera">Camera</string>
+    <string name="album">Gallery</string>
+    <string name="take_video">Video</string>
+    <string name="label_coin_sended">Coin %d sended from my heart! hope you like it</string>
+    <string name="content_too_short">Good content can touch his / her heart</string>
+    <string name="content_empty">You can say at least one word to touch his / her heart</string>
+    <string name="coin">Coins</string>
+    <string name="tv_glory_title">Lucky Show</string>
+    <string name="dialog_tip_album">Galley</string>
+    <string name="dialog_tip_camera">Camera</string>
+    <string name="translate_tv">Translate</string>
+    <string name="tip_name_editing">Please enter name you want</string>
+    <string name="tip_luck_draw_error">Lucky draw failed,Please try again</string>
+    <string name="tip_avatar_laoding">Loading</string>
+    <string name="tab_bottle">Bottles</string>
+    <string name="bottles">Bottles</string>
+    <string name="followers">Fans</string>
+    <string name="likes">Likes</string>
+    <string name="tb_user_info_activity">Personal Information</string>
+    <string name="user_info_avatar">Profile Photo</string>
+    <string name="user_info_name">Name</string>
+    <string name="user_info_gender">Gender</string>
+    <string name="user_info_name_editing">Edit Name</string>
+    <string name="user_info_name_saving">Saving.....</string>
+    <string name="user_info_avatar_uploading">Profile Uploading.....</string>
+    <string name="user_info_uploading">Userinfo Uploading.....</string>
+    <string name="user_info_name_upload">Save</string>
+    <string name="tip_name_entry">Out of Entry Limit!</string>
+    <string name="tip_avatar_upload_success">Update Success</string>
+    <string name="btn_center_follow">Follow</string>
+    <string name="btn_center_followed">Followed</string>
+    - <!--  TODO: Remove or change this placeholder text
+  -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="square_tab">Square</string>
+    <string name="fans">Fans</string>
+    <string name="state">Post</string>
+    <string name="image_empty">Please add pictures</string>
+    <string name="post_circle_exit">Cancel</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="send">send</string>
+    <string name="state_hint">Say something...</string>
+    <string name="state_all">All</string>
+    <string name="state_collect">Fold</string>
+    <string name="hint_circle_post">Enter what you wanna post...</string>
+    <string name="hint_circle_item_content_post">Please add content you wanna post</string>
+    <string name="hint_circle_item_pic_post">Please add picture or video you wanna post</string>
+    <string name="hint_circle_item_msg_post">Please add message you wanna post</string>
+    <string name="hint_circle_item_send_success">Send Success</string>
+    <string name="pic_back">back</string>
+    <string name="popUp_user_info_Camera">Camera</string>
+    <string name="popUp_user_info_Glerry">Gallery</string>
+    <string name="popUp_user_info_Cancel">Cancel</string>
+    <string name="tip_avatar_cancel">Cancel</string>
+    <string name="tip_avatar_select">Select</string>
+    <string name="tip_avatar_clip">Move and Clip</string>
+    <string name="tip_no_condition">The user has not posted a post yet</string>
+    <string name="tb_user_info_market">Shop</string>
+    <string name="finish">Finish</string>
+    <string name="only_choose_num">You can upload up to nine pictures at most</string>
+    <string name="invalidSD">SDcard invalid！</string>
+    <string name="photo">Select album</string>
+    <string name="preview">Preview</string>
+    <string name="unfinished">Unfinish</string>
+    <string name="camera_cancel">Cancel</string>
+    <string name="no_photo">Please upload at least one pic</string>
+    <string name="send_state_tip">Share an post here...</string>
+    <string name="tip_name_update_failed">Info updating failed,please one more try!</string>
+    <string name="btn_center_chat">Chat</string>
+    <string name="tip_user_center_about_followed">You have already flowed current user</string>
+    <string name="tb_user_info_black_list">Black List</string>
+    <string name="tip_state_delete">Delete current post</string>
+    <string name="btn_state_delete_confirm">Confirm</string>
+    <string name="tip_btn_state_delete_cancel">Cancel</string>
+    <string name="tip_delete_black_list">Delete</string>
+    <string name="set_sys_info">Notify</string>
+    <string name="added_to_blacklist">you were added to blacklist</string>
+    <string name="visitor_login">Visitor Login</string>
+    <string name="chat_item_delete">Delete</string>
+    <string name="chat_item_black">Blacklist</string>
+
+
+    <string name="send_status_fail_content">Send post failed</string>
+    <string name="send_status_fail_tip">Tip</string>
+    <string name="send_status_fail_resend">Resend</string>
+    <string name="send_status_fail_cancel">Cancel</string>
+
+    <string name="discover_new_version">Discover the new version</string>
+    <string name="latest_version_formate">latest version %1$s</string>
+    <string name="cancel_update">Cancel</string>
+    <string name="update">Update</string>
+    <string name="sex">Sex</string>
+    <string name="male">Male</string>
+    <string name="Female">Female</string>
+    <string name="title_system_notify">System Notification</string>
+    <string name="tip_update_ref_notification">Not Available on current version,please update your MeetU!</string>
+
+
+    <string name="notification_detail_page_title">Detail</string>
+
+    <string name="tip_pay_init">Initializing payment, please wait a moment...</string>
+    <string name="tip_pay_no_support">Sorry, your mobile phone does not support payment function!</string>
+    <string name="toast_post_bottle_uploading">Bottle flying now, wait for a moment...</string>
+    <string name="toast_post_bottle_success">Bottle Post Success</string>
+    <string name="toast_post_bottle_fail">Bottle post Fail,please retry</string>
+    <string name="image_save_at_s">Image saved at %1$s</string>
+    <string name="save_image">Save Image</string>
+    <string name="options">Options</string>
+    <string name="checking_update">Checking update , waiting...</string>
+    <string name="upload_album">Upload picture/video</string>
+    <string name="visible_self">Visible myself</string>
+    <string name="visible_all">All visible</string>
+    <string name="visible_coins">%d conins</string>
+    <string name="buy_coins">conins purchase</string>
+    <string name="album_item_count">%d pic/video</string>
+    <string name="more">More</string>
+    <string name="my_groups">My</string>
+    <string name="all_groups">All</string>
+    <string name="my_groups_nothing">Nothing yet?</string>
+    <string name="user_info_slogan">Slogan</string>
+    <string name="tab_qunzu">Group</string>
+    <string name="tab_my_new">My</string>
+    <string name="user_info_profession_editing">Edit Profession</string>
+    <string name="user_info_slogan_editing">Edit Slogan</string>
+    <string name="user_info_profession">Profession</string>
+    <string name="tv_user_album_suffix">Pictures and Videos</string>
+    <string name="tip_user_followed">Followed</string>
+    <string name="tip_user_group_count">Person(s)</string>
+    <string name="my_followed">Followed</string>
+    <string name="my_group">Group</string>
+    <string name="blogs">Post</string>
+    <string name="newest">New</string>
+    <string name="hotest">Hot</string>
+    <string name="permission">Permisson</string>
+    <string name="input_coins_count">Set coins</string>
+    <string name="edit_album_success">Save album success</string>
+    <string name="edit_album_faild">Save album faild, please try again.</string>
+    <string name="edit">Edit</string>
+    <string name="saveing_wait">Saving wait.</string>
+    <string name="uploading">Uploading please wait.</string>
+    <string name="load_data_faild">Load data faild , please try again.</string>
+    <string name="upload_faild">Upload faild , please try again.</string>
+    <string name="delete_faild">Delete faild , please try again.</string>
+    <string name="deleteing">Delete, please wait.</string>
+
+    <string name="home_head_tip">Recent posts</string>
+    <string name="home_head_new">New</string>
+    <string name="home_head_hot">Hot</string>
+    <string name="home_head_bottle">Bottle</string>
+
+    <string name="home_head_msg_count_tip">%d new message</string>
+
+    <string name="title_user_info_function">Posts</string>
+    <string name="title_groups_activity">Groups</string>
+    <string name="watch_album_buy_coins">It takes %d coins to see this album forever. </string>
+
+    <string name="message_list">My messages</string>
+    <string name="tip_slogan_edit">%d words left</string>
+    <string name="get_blogs_fail">get posts failed,please retry</string>
+    <string name="delete_suc">Delete success</string>
+    <string name="delete_fail">Delete fail</string>
+    <string name="paying">Paying coins,wait...</string>
+    <string name="pay_faild">Payment failure, please retry</string>
+
+    <string name="set_gift">Gift Exchange</string>
+    <string name="tv_coupon_exchange">Exchange</string>
+    <string name="about_gift_exchange">Gift exchange</string>
+    <string name="followed">Followed</string>
+
+    <string name="tip_delete_success">Delete Success</string>
+    <string name="tip_delete_failed">Delete Failed</string>
+    <string name="tip_exchange_success">Exchange Success</string>
+    <string name="tip_exchange_failed">Exchange Failed,Need more coins</string>
+
+    <string name="home_head_tip_1">#Recommend users#</string>
+    <string name="home_head_tip_2">#Hot groups#</string>
+    <string name="home_head_tip_3">#Lucky show#</string>
+    <string name="title_gift_exchange">Exchange Gift?</string>
+    <string name="tip_cancel">No</string>
+    <string name="tip_confirm">Yes</string>
+    <string name="tip_exchanging">Exchanging…</string>
+
+    <string name="tip_no_name">Please fill in the album name.</string>
+
+    <string name="tip_select_group">Select groups to share</string>
+
+
+    <string name="fb_chaping">1346420092122366_1409394245824950</string>
 </resources>

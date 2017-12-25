@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorPrimaryDark">#AAAAAA</color>
+    <color name="colorAccent">#257DEC</color>
+    <color name="colorBack">#EBECEB</color>
+    <color name="colorToolBarBack">#F7F7F7</color>
+    <color name="colorToolBarBText">#000000</color>
+    <color name="colorSetItemBack">#FFFFFF</color>
+    <color name="colorCoin">#FBA00D</color>
+
+    <color name="rank_title_color">#f7f7f7</color>
+    <color name="rank_content_color">#ebebeb</color>
+    <color name="rank_text_color">#000000</color>
+    <color name="rank_text_title_color_focus">#4D9AFE</color>
+    <color name="rank_text_title_color_normal">#FF666666</color>
+    <color name="et_bottom_line">#65686A</color>
+
+    <color name="login_bg_color">#60385b95</color>
+    <color name="pay_bg_color">#c8e1ff</color>
+    <color name="pay_text_color_1">#FF666666</color>
+    <color name="pay_text_color_2">#FFFFFFFF</color>
+    <color name="pay_text_color_3">#FF247CED</color>
+
+
+    <color name="my_item_name_color">#333333</color>
+    <color name="my_item_address_color">#999999</color>
+    <color name="my_item_content_color">#666666</color>
+
+    <color name="luck_draw_text_bg">#65fff5de</color>
+    <color name="luck_draw_text_color">#333333</color>
+
+    <color name="color_ff">#F0F0F0</color>
+    <color name="color_dark">#ff444444</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="green">#00ff00</color>
+    <color name="text_gorden">#FFD700</color>
+
+    <color name="bg_dialog_blue_light">#C8E1FF</color>
+    <color name="color_notification">#FE7B2F</color>
+    <color name="color_luckdraw_dialog">#ff5c5d</color>
+    <color name="color_b4_name_save">#C0C1C0</color>
+    <color name="color_after_name_save_bg">#4D9AFD</color>
+    <color name="blue">#0000ff</color>
+    <color name="dodgerblue">#1e90ff</color><!--闪兰色 -->
+    <color name="midnightblue">#191970</color><!--中灰兰色 -->
+    <color name="aqua">#00ffff</color><!--浅绿色 -->
+    <color name="cyan">#00ffff</color><!--青色 -->
+    <color name="springgreen">#00ff7f</color><!--春绿色 -->
+    <color name="lime">#00ff00</color><!--酸橙色 -->
+    <color name="mediumspringgreen">#00fa9a</color><!--中春绿色 -->
+    <color name="darkturquoise">#00ced1</color><!--暗宝石绿 -->
+    <color name="deepskyblue">#00bfff</color><!--深天蓝色 -->
+    <color name="darkcyan">#008b8b</color><!--暗青色 -->
+    <color name="teal">#008080</color><!--水鸭色 -->
+    <color name="darkgreen">#006400</color><!--暗绿色 -->
+    <color name="mediumblue">#0000cd</color><!--中兰色 -->
+    <color name="darkblue">#00008b</color><!--暗蓝色 -->
+    <color name="navy">#000080</color><!--海军色 -->
+    <color name="transparent">#0000</color><!-- 透明 -->
+    <color name="transparent2">#8000</color><!-- 透明 -->
+    <!-- 上传图片添加的颜色 -->
+    <color name="none_color">#00000000</color>
+    <color name="plugin_camera_black">#000000</color>
+    <color name="albumback">#E1E0DE</color>
+    <color name="color_232323">#232323</color>
+    <color name="name_selector_color">#cccccc</color>
+
+    <color name="color_8290AF">#8290AF</color>
+    <color name="color_aeaeae">#aeaeae</color>
+    <color name="im_social_dig_name_bg">#DDDDDD</color>
+    <color name="im_font_color_text_hint">#abb1b6</color>
+    <color name="im_line_color">#dadada</color>
+    <color name="bg_no_photo">#EEEEEE</color>
+    <color name="title_bg">#373B3E</color>
+    <color name="video_bg">#ededed</color>
+    <color name="praise_item_default">#333333</color>
+    <color name="praise_item_selector_default">#cccccc</color>
+    <color name="praise_item">#8290AF</color>
+    <color name="default_clickable_color">#cccccc</color>
+    <color name="basic_color_primary">#373b3e</color>
+    <color name="latest_version_txt_color">#616161</color>
+    <color name="cancel_update_btn_pressed">#acacac</color>
+    <color name="cancel_update_btn">#dddddd</color>
+    <color name="update_btn_pressed">#be1007</color>
+    <color name="update_btn">#fc3a37</color>
+    <color name="color_user_center_followed">#999999</color>
+    <color name="color_album_upload">#509cfb</color>
+    <color name="color_text_gray_bdbdbd">#bdbdbd</color>
+    <color name="photopicker_background">#181819</color>
+    <color name="album_bg_color">#f3f4f5</color>
+    <color name="user_album_edit_text_color">#606162</color>
+    <color name="album_delete">#a0fa3c39</color>
+
+    <color name="home_head_1">#FFFFAA05</color>
+    <color name="home_head_2">#FFA943FF</color>
+    <color name="home_head_3">#FF00D98F</color>
+    <color name="home_head_4">#FFFF5D2D</color>
+    <color name="home_head_5">#FF599FF8</color>
+    <color name="home_head_line">#FF4D9AFE</color>
+    <color name="home_head_default">#FF666666</color>
+
+    <color name="gift_page_bg">#FFF4F4F4</color>
+    <color name="vip_title_bg">#FFE23e31</color>
+    <color name="red">#be1007</color>
 </resources>

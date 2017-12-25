@@ -9,6 +9,7 @@ import android.view.Window;
 
 import com.nshane.generalframe.interfaces.IPresenter;
 import com.nshane.generalframe.interfaces.IView;
+import com.nshane.generalframe.utils.LogUtil;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,6 +19,9 @@ import java.util.Set;
  */
 
 public abstract class BaseActivity extends AppCompatActivity implements IView{
+
+
+    private static final String TAG = "cg";
 
     /**
      * BaseActivity initialize process:
@@ -61,9 +65,13 @@ public abstract class BaseActivity extends AppCompatActivity implements IView{
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(getLayoutResId());
-        //log 执行顺序
+        /**
+         * 这里记录下执行顺序
+         */
+
         onInitPresenters();
         addPresenters();
+        LogUtil.d(TAG,"baseActivity");
         initView();
     }
 

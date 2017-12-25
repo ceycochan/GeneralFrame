@@ -1,8 +1,9 @@
 package com.nshane.generalframe.ui.base;
 
-import android.app.Fragment;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import java.util.Set;
  * Created by bryan on 2017-12-21.
  */
 
+
+// fragment base activity
 public abstract class AbsFragment extends Fragment implements IView{
 
     private Set<IPresenter> mAllPresenters = new HashSet<IPresenter>(1);
