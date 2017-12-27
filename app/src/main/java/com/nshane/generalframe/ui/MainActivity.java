@@ -8,7 +8,8 @@ import android.support.v4.view.ViewPager;
 import com.nshane.generalframe.R;
 import com.nshane.generalframe.adapter.TopViewPagerAdapter;
 import com.nshane.generalframe.interfaces.IPresenter;
-import com.nshane.generalframe.ui.base.BaseActivity;
+import com.nshane.generalframe.ui.abs.BaseActivity;
+import com.nshane.generalframe.utils.Constants;
 import com.nshane.generalframe.utils.EventUtil;
 import com.nshane.generalframe.utils.LogUtil;
 import com.nshane.generalframe.views.BottomIndicator;
@@ -40,6 +41,11 @@ public class MainActivity extends BaseActivity {
     public static int viewPicCount = 0;
 
 
+    /**
+     * @author
+     * @description a collecting frame for app constructing
+     */
+
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_main;
@@ -61,8 +67,8 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initView() {
 
-        LogUtil.d("cg", "initView执行了");
-        mTitles = Arrays.asList("大宝剑", "大快乐", "柯南", "呵呵");
+        LogUtil.d(Constants.TAG, "initView @ MainActivity");
+        mTitles = Arrays.asList(getResources().getString(R.string.tab_home), getResources().getString(R.string.btn_center_chat), getResources().getString(R.string.tab_qunzu), getResources().getString(R.string.tab_my_new));
         mViewPager = (ViewPager) findViewById(R.id.id_viewPager);
         mIndicator = (BottomIndicator) findViewById(R.id.id_bottom_indicator);
 
@@ -81,10 +87,13 @@ public class MainActivity extends BaseActivity {
                 MyFragment mMyFragment = new MyFragment();
                 mFragments.add(mMyFragment);
             }
-            mPagerAdapter = new TopViewPagerAdapter(getSupportFragmentManager(), this, mFragments);
+            mPagerAdapter = new TopViewPagerAdapter(getSupportFragmentManager(), mFragments);
+
             mViewPager.setAdapter(mPagerAdapter);
             mViewPager.setOffscreenPageLimit(5);
-            //mViewPager.setCurrentItem(2);
+
+
+//            mViewPager.setCurrentItem(2);  // 指定初始化
             mIndicator.setViewPager(mViewPager);
             /**
              *
@@ -126,7 +135,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initView();
     }
 
     @Override

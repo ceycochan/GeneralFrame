@@ -35,6 +35,9 @@ public class Constants {
     public static final int EVENT_SHOW_AD_INTO_USER_PAGE = 2 ;
     public static final int EVENT_SHOW_AD_VIEW_PIC = 3 ;
 
+
+    public static final String TAG = "cg";
+
     //public static final int BG[] = {R.mipmap.background_login,R.mipmap.bg_1,R.mipmap.bg_2,R.mipmap.bg_3,R.mipmap.bg_4,R.mipmap.bg_5,R.mipmap.bg_6,R.mipmap.bg_7,R.mipmap.bg_8,R.mipmap.bg_9};
 
 

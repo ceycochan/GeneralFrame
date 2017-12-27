@@ -1,4 +1,4 @@
-package com.nshane.generalframe.model.entity;
+package com.nshane.generalframe.model;
 
 import android.text.TextUtils;
 
@@ -7,7 +7,9 @@ import com.nshane.generalframe.utils.SharePreferenceManager;
 
 import org.json.JSONObject;
 
-
+/**
+ * Created by bryan on 2017-12-26.
+ */
 
 public class UserInfo {
     public String uid;

@@ -63,7 +63,6 @@ public class BottomIconView extends ImageView {
 
     /**
      * 根据资源id创建的位图
-     *
      * @param resId 资源id
      * @return 创建的位图
      */

@@ -12,13 +12,11 @@ import android.view.ViewGroup;
 import com.nshane.generalframe.R;
 import com.nshane.generalframe.http.MyTask;
 import com.nshane.generalframe.interfaces.IPresenter;
-import com.nshane.generalframe.ui.base.AbsFragment;
+import com.nshane.generalframe.ui.abs.AbsFragment;
 import com.nshane.generalframe.utils.Constants;
 import com.nshane.generalframe.utils.FileUtil;
 import com.nshane.generalframe.utils.LogUtil;
 import com.nshane.generalframe.utils.SharePreferenceManager;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
 
@@ -33,7 +31,7 @@ public class SettingFragment extends AbsFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EventBus.getDefault().register(this);
+//        EventBus.getDefault().register(this);
 
     }
 
@@ -54,13 +52,13 @@ public class SettingFragment extends AbsFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        EventBus.getDefault().unregister(this);
+//        EventBus.getDefault().unregister(this);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
+//        EventBus.getDefault().unregister(this);
     }
 
 

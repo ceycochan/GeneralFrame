@@ -11,9 +11,7 @@ import android.view.ViewGroup;
 
 import com.nshane.generalframe.R;
 import com.nshane.generalframe.interfaces.IPresenter;
-import com.nshane.generalframe.ui.base.AbsFragment;
-
-import org.greenrobot.eventbus.EventBus;
+import com.nshane.generalframe.ui.abs.AbsFragment;
 
 
 public class GroupsFragment extends AbsFragment {
@@ -79,7 +77,7 @@ public class GroupsFragment extends AbsFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        EventBus.getDefault().unregister(this);
+
     }
 
 

@@ -1,4 +1,4 @@
-package com.nshane.generalframe.ui.base;
+package com.nshane.generalframe.ui.abs;
 
 
 import android.os.Bundle;
@@ -18,8 +18,7 @@ import java.util.Set;
  * Created by bryan on 2017-12-21.
  */
 
-
-// fragment base activity
+// fragment base class
 public abstract class AbsFragment extends Fragment implements IView{
 
     private Set<IPresenter> mAllPresenters = new HashSet<IPresenter>(1);

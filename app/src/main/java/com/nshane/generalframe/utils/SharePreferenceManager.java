@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.nshane.generalframe.GeneralFrameApplication;
-import com.nshane.generalframe.model.entity.UserInfo;
+import com.nshane.generalframe.model.UserInfo;
 
 
 /**

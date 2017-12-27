@@ -9,10 +9,8 @@ import android.view.ViewGroup;
 
 import com.nshane.generalframe.R;
 import com.nshane.generalframe.interfaces.IPresenter;
-import com.nshane.generalframe.ui.base.AbsFragment;
+import com.nshane.generalframe.ui.abs.AbsFragment;
 import com.nshane.generalframe.utils.LogUtil;
-
-import org.greenrobot.eventbus.EventBus;
 
 
 /**
@@ -24,7 +22,6 @@ public class MyFragment extends AbsFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        EventBus.getDefault().register(this);
         View rootView = super.onCreateView(inflater, container);
         Toolbar mTb = (Toolbar) rootView.findViewById(R.id.tb_toolbar);
         mTb.setTitle(getString(R.string.btn_center_chat));
@@ -95,7 +92,6 @@ public class MyFragment extends AbsFragment {
     public void onDestroy() {
         super.onDestroy();
         LogUtil.d("lzz-refresh", "onDestroy");
-        EventBus.getDefault().unregister(this);
     }
 
 

@@ -15,9 +15,7 @@ import android.widget.TextView;
 
 import com.nshane.generalframe.R;
 import com.nshane.generalframe.interfaces.IPresenter;
-import com.nshane.generalframe.ui.base.AbsFragment;
-
-import org.greenrobot.eventbus.EventBus;
+import com.nshane.generalframe.ui.abs.AbsFragment;
 
 
 public class HomeFragment extends AbsFragment {
@@ -53,13 +51,13 @@ public class HomeFragment extends AbsFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        EventBus.getDefault().register(this);
+
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
+//        EventBus.getDefault().unregister(this);
     }
 
     @Override

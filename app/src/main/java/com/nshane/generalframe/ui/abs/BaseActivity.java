@@ -1,4 +1,4 @@
-package com.nshane.generalframe.ui.base;
+package com.nshane.generalframe.ui.abs;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -9,6 +9,7 @@ import android.view.Window;
 
 import com.nshane.generalframe.interfaces.IPresenter;
 import com.nshane.generalframe.interfaces.IView;
+import com.nshane.generalframe.utils.Constants;
 import com.nshane.generalframe.utils.LogUtil;
 
 import java.util.HashSet;
@@ -18,22 +19,19 @@ import java.util.Set;
  * Created by bryan on 2017-12-21.
  */
 
-public abstract class BaseActivity extends AppCompatActivity implements IView{
+public abstract class BaseActivity extends AppCompatActivity implements IView {
 
-
-    private static final String TAG = "cg";
 
     /**
      * BaseActivity initialize process:
      * 1.
      */
 
-   private Set<IPresenter> mAllPresenters = new HashSet<>(1); // 1?
+    private Set<IPresenter> mAllPresenters = new HashSet<>(1); // 1?
 
 
     /**
-     * @关于protected
-     * protected应该是用在子类实现父类的方法或者方法中使用。
+     * @关于protected protected应该是用在子类实现父类的方法或者方法中使用。
      * 如果用public的，别的类还是可以使用到这个父类的方法或者成员;
      * 当使用protected的时候，只有子类能访问了，其他的类就访问不了了。
      */
@@ -41,7 +39,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IView{
     protected abstract int getLayoutResId();
 
 
-     // 需要子类来实现，获取子类的IPresenter，一个activity有可能有多个IPresenter
+    // 需要子类来实现，获取子类的IPresenter，一个activity有可能有多个IPresenter
 
     protected abstract IPresenter[] getPresenters();
 
@@ -49,15 +47,14 @@ public abstract class BaseActivity extends AppCompatActivity implements IView{
     protected abstract void onInitPresenters();
 
 
-    private void addPresenters(){
+    private void addPresenters() {
         IPresenter[] presenters = getPresenters();
-        if (presenters!=null){
-            for (int i=0;i<presenters.length;i++){
+        if (presenters != null) {
+            for (int i = 0; i < presenters.length; i++) {
                 mAllPresenters.add(presenters[i]);
             }
         }
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,16 +62,16 @@ public abstract class BaseActivity extends AppCompatActivity implements IView{
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(getLayoutResId());
-        /**
-         * 这里记录下执行顺序
-         */
 
         onInitPresenters();
-        addPresenters();
-        LogUtil.d(TAG,"baseActivity");
-        initView();
-    }
 
+        addPresenters();
+
+        LogUtil.d(Constants.TAG, "baseActivity");
+
+        initView();
+
+    }
 
     @Override
     protected void onResume() {

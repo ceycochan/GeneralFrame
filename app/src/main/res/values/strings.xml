@@ -1,11 +1,5 @@
 <resources>
-    <string name="app_name">MeetU</string>
-    <string name="facebook_app_id">754394394741488</string>
-    - <!--  <string name="facebook_app_id">1346420092122366</string>
-  -->
-    <string name="fb_login_protocol_scheme">fb754394394741488</string>
-    - <!-- <string name="fb_login_protocol_scheme">fb1346420092122366</string>
-  -->
+    <string name="app_name">General Frame</string>
     <string name="tab_home">Home</string>
     <string name="tab_rank">Ranking</string>
     <string name="title_rank">Dail Ranking</string>

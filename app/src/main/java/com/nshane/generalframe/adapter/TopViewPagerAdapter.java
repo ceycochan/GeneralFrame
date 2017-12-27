@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.nshane.generalframe.utils.Constants;
 import com.nshane.generalframe.utils.LogUtil;
 
 import java.util.List;
@@ -18,15 +19,15 @@ public class TopViewPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> mFragments;
     private Context mContext;
 
-    public TopViewPagerAdapter(FragmentManager fm, Context context, List<Fragment> fragments) {
+    public TopViewPagerAdapter(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
-        mContext = context;
+//        mContext = context;
         mFragments = fragments;
     }
 
     @Override
     public Fragment getItem(int position) {
-        LogUtil.d("cg-refresh", "my position = " + position);
+        LogUtil.d(Constants.TAG, "my position = " + position);
         return mFragments.get(position);
     }
 
