@@ -19,17 +19,19 @@ import java.util.Set;
  */
 
 // fragment base class
-public abstract class AbsFragment extends Fragment implements IView{
+public abstract class AbsFragment extends Fragment implements IView {
 
     private Set<IPresenter> mAllPresenters = new HashSet<IPresenter>(1);
 
-    /** * 获取layout的id，具体由子类实现
+    /**
+     * 获取layout的id，具体由子类实现
+     *
      * @return
      */
     protected abstract int getLayoutResId();
 
     /**
-     *需要子类来实现，获取子类的IPresenter，一个activity有可能有多个IPresenter
+     * 需要子类来实现，获取子类的IPresenter，一个activity有可能有多个IPresenter
      */
     protected abstract IPresenter[] getPresenters();
 
@@ -37,14 +39,14 @@ public abstract class AbsFragment extends Fragment implements IView{
     protected abstract void onInitPresenters();
 
 
-    protected void parseArgumentsFromIntent(Bundle bundle){
+    protected void parseArgumentsFromIntent(Bundle bundle) {
     }
 
-    private void addPresenters(){
+    private void addPresenters() {
 
         IPresenter[] presenters = getPresenters();
-        if(presenters != null){
-            for(int i = 0; i < presenters.length; i++){
+        if (presenters != null) {
+            for (int i = 0; i < presenters.length; i++) {
                 mAllPresenters.add(presenters[i]);
             }
         }
@@ -62,24 +64,24 @@ public abstract class AbsFragment extends Fragment implements IView{
     }
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container) {
-        View rootView = inflater.inflate(getLayoutResId(), container , false) ;
+        View rootView = inflater.inflate(getLayoutResId(), container, false);
 
-        Bundle bundle = getArguments() ;
-        if (bundle != null){
-            parseArgumentsFromIntent(bundle) ;
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            parseArgumentsFromIntent(bundle);
         }
 
         onInitPresenters();
 
         addPresenters();
-        return rootView ;
+        return rootView;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        for (IPresenter presenter:mAllPresenters  ) {
-            if(presenter != null){
+        for (IPresenter presenter : mAllPresenters) {
+            if (presenter != null) {
                 presenter.onResume();
             }
         }
@@ -89,8 +91,8 @@ public abstract class AbsFragment extends Fragment implements IView{
     public void onDestroy() {
         super.onDestroy();
 
-        for (IPresenter presenter:mAllPresenters  ) {
-            if(presenter != null){
+        for (IPresenter presenter : mAllPresenters) {
+            if (presenter != null) {
                 presenter.onDestroy();
             }
         }
@@ -99,8 +101,8 @@ public abstract class AbsFragment extends Fragment implements IView{
     @Override
     public void onPause() {
         super.onPause();
-        for (IPresenter presenter:mAllPresenters  ) {
-            if(presenter != null){
+        for (IPresenter presenter : mAllPresenters) {
+            if (presenter != null) {
                 presenter.onPause();
             }
         }
@@ -110,8 +112,8 @@ public abstract class AbsFragment extends Fragment implements IView{
     public void onStart() {
         super.onStart();
 
-        for (IPresenter presenter:mAllPresenters  ) {
-            if(presenter != null){
+        for (IPresenter presenter : mAllPresenters) {
+            if (presenter != null) {
                 presenter.onStart();
             }
         }
@@ -121,8 +123,8 @@ public abstract class AbsFragment extends Fragment implements IView{
     public void onStop() {
         super.onStop();
 
-        for (IPresenter presenter:mAllPresenters  ) {
-            if(presenter != null){
+        for (IPresenter presenter : mAllPresenters) {
+            if (presenter != null) {
                 presenter.onStop();
             }
         }
