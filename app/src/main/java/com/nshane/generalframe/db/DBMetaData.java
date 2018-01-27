@@ -22,7 +22,7 @@ public class DBMetaData {
      */
 
 
-    public static final String DATABASE_NAME = "nshane.db";
+    public static final String DATABASE_NAME = "shane.db";
     public static final int DATABASE_VERSION = 1;  //at least version 1
 
 

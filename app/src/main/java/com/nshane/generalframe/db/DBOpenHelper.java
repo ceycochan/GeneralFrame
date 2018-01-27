@@ -18,7 +18,6 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         super(context, DBMetaData.DATABASE_NAME, null, DBMetaData.DATABASE_VERSION);
     }
 
-
     public synchronized static DBOpenHelper getInstance(Context context) {
         if (mInstance == null) {
             mInstance = new DBOpenHelper(context);
@@ -43,4 +42,6 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + DBMetaData.FriendTableMetaData.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + DBMetaData.SearchHistoryMetaData.TABLE_NAME);
     }
+
+
 }
