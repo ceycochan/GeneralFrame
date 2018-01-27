@@ -21,7 +21,6 @@ public class DBMetaData {
      * 4.version at least is 1
      */
 
-
     public static final String DATABASE_NAME = "shane.db";
     public static final int DATABASE_VERSION = 1;  //at least version 1
 

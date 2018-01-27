@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.nshane.generalframe.R;
-import com.nshane.generalframe.adapter.TopViewPagerAdapter;
+import com.nshane.generalframe.adapters.TopViewPagerAdapter;
 import com.nshane.generalframe.interfaces.IPresenter;
 import com.nshane.generalframe.ui.abs.BaseActivity;
 import com.nshane.generalframe.utils.Constants;

@@ -37,6 +37,14 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         LogUtil.d("cg", "db---onCreate()");
     }
 
+    /**
+     * invoked when db upgraded
+     *
+     * @param db
+     * @param oldVersion
+     * @param newVersion
+     */
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + DBMetaData.FriendTableMetaData.TABLE_NAME);
