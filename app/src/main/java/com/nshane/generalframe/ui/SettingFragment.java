@@ -5,9 +5,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.nshane.generalframe.R;
 import com.nshane.generalframe.http.MyTask;
@@ -20,6 +23,10 @@ import com.nshane.generalframe.utils.SharePreferenceManager;
 
 import java.io.File;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 
 /**
  * Created by lbl on 2017-6-26.
@@ -28,10 +35,17 @@ import java.io.File;
 public class SettingFragment extends AbsFragment {
 
 
+    @BindView(R.id.ll_user_update)
+    LinearLayout llUserUpdate;
+    @BindView(R.id.ll_user_info)
+    LinearLayout llUserInfo;
+
+
+    private String gpPkg = "com.android.vending";
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        EventBus.getDefault().register(this);
 
     }
 
@@ -40,6 +54,7 @@ public class SettingFragment extends AbsFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = super.onCreateView(inflater, container);
+        ButterKnife.bind(this, rootView);
         return rootView;
     }
 
@@ -52,13 +67,12 @@ public class SettingFragment extends AbsFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-//        EventBus.getDefault().unregister(this);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-//        EventBus.getDefault().unregister(this);
+
     }
 
 
@@ -71,12 +85,6 @@ public class SettingFragment extends AbsFragment {
     @Override
     public void onResume() {
         super.onResume();
-
-//        mUserPresenter.getCurUserInfo(userId); // 从个人信息页面返回后再次请求数据
-        LogUtil.d("lzz-refresh", "settings onResume");
-
-
-        LogUtil.d("cg", "settings页面 onResume");
 
 
     }
@@ -104,10 +112,6 @@ public class SettingFragment extends AbsFragment {
     private Handler mHandler = new Handler();
 
     private void shareApp() {
-        /**
-         * 1. 设备有google play
-         */
-
         /**
          * if here used at fragment,declare activity judgement
          * such as
@@ -177,7 +181,7 @@ public class SettingFragment extends AbsFragment {
     }
 
 
-    private void setUserInfo(String userName, String icon) { //填充数据
+    private void setUserInfo(String userName, String icon) {
 
     }
 
@@ -199,4 +203,64 @@ public class SettingFragment extends AbsFragment {
     }
 
 
+    private void goStore(String appPkg, String marketPkg) {
+        if (TextUtils.isEmpty(appPkg)) return;
+
+        // 跳转指定商城
+        Intent intentSet = new Intent(Intent.ACTION_VIEW);
+        intentSet.setData(Uri.parse("market://details?id=" + appPkg));
+        /**
+         * 在不指定setPackage的情况下,系统过滤出实现 "market://details?id=" 接口的商店类应用已供用户选择
+         */
+        intentSet.setPackage(marketPkg);
+        intentSet.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (intentSet.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivity(intentSet);
+        } else {
+            // 设备没有GP,使用浏览器跳转
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + appPkg));
+            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                LogUtil.d("cg", "设备包含浏览器");
+                startActivity(intent);
+            } else {
+                Toast.makeText(getActivity(), "store & browser are not available", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
+        /**
+         * 多层判断跳转store
+         */
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("market://details?id=" + appPkg));
+        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+            LogUtil.d("cg", "筛选浏览器商城app");
+            startActivity(intent);
+        } else {
+            LogUtil.d("cg","浏览器跳转GP");
+            intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + appPkg));
+            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                LogUtil.d("cg","设备包含浏览器");
+                startActivity(intent);
+            } else {
+                Toast.makeText(getActivity(), "store & browser are not available", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+
+    }
+
+    @OnClick({R.id.ll_user_update, R.id.ll_user_info})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.ll_user_update:
+                Toast.makeText(getActivity(), "Update is clicked", Toast.LENGTH_SHORT).show();
+                // TODO: 2018-1-30 使用sea bottle指向GP测试
+                goStore("co.meetu", gpPkg);
+                break;
+            case R.id.ll_user_info:
+                break;
+        }
+    }
 }

@@ -1,9 +1,18 @@
 package com.nshane.generalframe.ui;
 
+import android.app.AlertDialog;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo.State;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.widget.Toast;
 
 import com.nshane.generalframe.R;
 import com.nshane.generalframe.adapters.TopViewPagerAdapter;
@@ -60,7 +69,6 @@ public class MainActivity extends BaseActivity {
     protected void onInitPresenters() {
 
     }
-
 
     private int mCount = 0;
 
@@ -143,4 +151,105 @@ public class MainActivity extends BaseActivity {
         EventBus.getDefault().unregister(this);
 
     }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        checkNetWorkState();
+    }
+
+    /**
+     * 检测是否网络连接
+     */
+
+    private ConnectivityManager manager;
+
+    private boolean checkNetWorkState() {
+        boolean flag = false;
+
+        manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        if (manager.getActiveNetworkInfo() != null) {
+            flag = manager.getActiveNetworkInfo().isAvailable();
+        }
+
+        if (!flag) {
+            //不可用&去设置网络
+            setNetWork();
+        } else {
+            //网络可用判断是WIFI or 4G
+            netConnected();
+        }
+
+        return flag;
+    }
+
+
+    /**
+     * 网络处于连接状态
+     * <p>
+     * 判断是 WIFI or 4G
+     */
+
+    private void netConnected() {
+        NetworkInfo.State lte = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState();
+        NetworkInfo.State wifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState();
+        if (lte == NetworkInfo.State.CONNECTED || lte == NetworkInfo.State.CONNECTING) {
+            Toast.makeText(this, "NetWork available : LTE", Toast.LENGTH_SHORT).show();
+        }
+
+        if (wifi == State.CONNECTED || wifi == State.CONNECTING) {
+            Toast.makeText(this, "NetWork available : WIFI", Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+
+
+    /**
+     * 设置网络
+     */
+
+    private void setNetWork() {
+        Toast.makeText(this, "wifi is closed", Toast.LENGTH_SHORT).show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setTitle("网络提示信息");
+        builder.setMessage("网络不可用，如果继续，请先设置网络！");
+        builder.setPositiveButton("设置", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = null;
+                /**
+                 * 判断手机系统的版本！如果API大于10 就是3.0+
+                 * 因为3.0以上的版本的设置和3.0以下的设置不一样，调用的方法不同
+                 */
+                if (android.os.Build.VERSION.SDK_INT > 10) {
+                    intent = new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS);
+                } else {
+                    intent = new Intent();
+                    ComponentName component = new ComponentName(
+                            "com.android.settings",
+                            "com.android.settings.WirelessSettings");
+                    intent.setComponent(component);
+                    intent.setAction("android.intent.action.VIEW");
+                }
+                startActivity(intent);
+            }
+        });
+
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "取消了网络设置", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.create();
+        builder.show();
+
+    }
+
+
 }

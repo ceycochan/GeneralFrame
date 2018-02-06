@@ -45,8 +45,6 @@ public class NoScrollViewPager extends ViewPager {
     @Override
     public boolean onTouchEvent(MotionEvent arg0) {
         /* return false;//super.onTouchEvent(arg0); */
-
-
         //return false;// 可行,不消费,传给父控件
         //return true;// 可行,消费,拦截事件
         //super.onTouchEvent(ev); //不行,

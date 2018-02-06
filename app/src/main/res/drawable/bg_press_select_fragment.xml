@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--drawable 可用shape(如下注释) or 引用颜色(仅color文件夹下)-->
+
+    <!--<item android:state_pressed="false"   android:drawable="@drawable/bg_unpressed"/>-->
+    <!--<item android:state_pressed="true"  android:drawable="@drawable/bg_pressed"/>-->
+
+    <item android:drawable="@color/white" android:state_pressed="false" />
+    <item android:drawable="@color/colorBack" android:state_pressed="true" />
+
+</selector>
