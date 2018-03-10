@@ -89,8 +89,7 @@ public class GeneralFrameApplication extends Application {
     }
 
     /**
-     * MultiDex: the way to solve 65k(65535) limitation
-     * <p>
+     * MultiDex: the way to solve 65k(65535) limitation:
      * <p>
      * fyi-1: 65k is the sum total of methods invoked by a DEX
      * <p>

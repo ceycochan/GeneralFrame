@@ -20,6 +20,7 @@ import com.nshane.generalframe.utils.Constants;
 import com.nshane.generalframe.utils.FileUtil;
 import com.nshane.generalframe.utils.LogUtil;
 import com.nshane.generalframe.utils.SharePreferenceManager;
+import com.nshane.generalframe.utils.ThreadPool;
 
 import java.io.File;
 
@@ -39,6 +40,12 @@ public class SettingFragment extends AbsFragment {
     LinearLayout llUserUpdate;
     @BindView(R.id.ll_user_info)
     LinearLayout llUserInfo;
+    @BindView(R.id.ll_thread_pool_test)
+    LinearLayout llThreadPoolTest;
+    @BindView(R.id.ll_update_related)
+    LinearLayout llUpdateRelated;
+    @BindView(R.id.ll_network_monitoring)
+    LinearLayout llNetworkMonitoring;
 
 
     private String gpPkg = "com.android.vending";
@@ -64,10 +71,6 @@ public class SettingFragment extends AbsFragment {
         super.onStart();
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
 
     @Override
     public void onDestroy() {
@@ -131,9 +134,7 @@ public class SettingFragment extends AbsFragment {
         final String description = "http://www.meetu.co";
         //multi-thread opt
 
-        /**
-         * 分享功能暂时屏蔽
-         */
+
         Runnable runSend = new Runnable() {
             @Override
             public void run() {
@@ -209,21 +210,20 @@ public class SettingFragment extends AbsFragment {
         // 跳转指定商城
         Intent intentSet = new Intent(Intent.ACTION_VIEW);
         intentSet.setData(Uri.parse("market://details?id=" + appPkg));
-        /**
-         * 在不指定setPackage的情况下,系统过滤出实现 "market://details?id=" 接口的商店类应用已供用户选择
-         */
+        // 在不指定setPackage的情况下,系统过滤出实现 "market://details?id=" 接口的商店类应用已供用户选择
         intentSet.setPackage(marketPkg);
         intentSet.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         if (intentSet.resolveActivity(getActivity().getPackageManager()) != null) {
             startActivity(intentSet);
         } else {
-            // 设备没有GP,使用浏览器跳转
+            LogUtil.d("dax", "设备无GP");
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + appPkg));
             if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                LogUtil.d("cg", "设备包含浏览器");
+                LogUtil.d("dax", "使用浏览器启动");
                 startActivity(intent);
             } else {
+                LogUtil.d("dax", "无browser类应用");
                 Toast.makeText(getActivity(), "store & browser are not available", Toast.LENGTH_SHORT).show();
             }
         }
@@ -232,26 +232,26 @@ public class SettingFragment extends AbsFragment {
         /**
          * 多层判断跳转store
          */
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("market://details?id=" + appPkg));
-        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-            LogUtil.d("cg", "筛选浏览器商城app");
-            startActivity(intent);
-        } else {
-            LogUtil.d("cg","浏览器跳转GP");
-            intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + appPkg));
-            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                LogUtil.d("cg","设备包含浏览器");
-                startActivity(intent);
-            } else {
-                Toast.makeText(getActivity(), "store & browser are not available", Toast.LENGTH_SHORT).show();
-            }
-        }
+//        Intent intent = new Intent(Intent.ACTION_VIEW);
+//        intent.setData(Uri.parse("market://details?id=" + appPkg));
+//        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+//            LogUtil.d("dax", "筛选浏览器商城app");
+//            startActivity(intent);
+//        } else {
+//            LogUtil.d("dax", "浏览器跳转GP");
+//            intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + appPkg));
+//            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+//                LogUtil.d("dax", "设备包含浏览器");
+//                startActivity(intent);
+//            } else {
+//                Toast.makeText(getActivity(), "store & browser are not available", Toast.LENGTH_SHORT).show();
+//            }
+//        }
 
 
     }
 
-    @OnClick({R.id.ll_user_update, R.id.ll_user_info})
+    @OnClick({R.id.ll_user_update, R.id.ll_user_info, R.id.ll_thread_pool_test, R.id.ll_update_related, R.id.ll_network_monitoring})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ll_user_update:
@@ -260,7 +260,66 @@ public class SettingFragment extends AbsFragment {
                 goStore("co.meetu", gpPkg);
                 break;
             case R.id.ll_user_info:
+                int i = debugTrail();
+                Toast.makeText(getActivity(), "debug==" + i, Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.ll_thread_pool_test:
+                ThreadPool tp = ThreadPool.getThreadPool(3);
+                tp.execute(new Runnable[]{new Task(), new Task(), new Task()});
+                tp.execute(new Runnable[]{new Task(), new Task(), new Task()});
+//                LogUtil.d("dax",tp+"");
+                System.out.println(tp);
+                tp.destroy();// 所有线程都执行完成才destroy
+                System.out.println(tp);
+//                LogUtil.d("dax",tp+"");
+
+                break;
+
+
+            case R.id.ll_update_related:
+                UpdateActivity.startActivity(getActivity());
+                break;
+
+            case R.id.ll_network_monitoring:
+                // TODO: 2018-3-9 跳转网络监听测试页面
+                NetworkStateActivity.startActivity(getActivity());
                 break;
         }
     }
+
+
+    private int debugTrail() {
+
+        int debug = 0;
+
+        int debugWatch = 0;
+
+        for (int i = 0; i < 10; i++) {
+            debug++;
+
+            debugWatch++;
+        }
+
+        return debug;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+    }
+
+
+    // simulating loading
+    class Task implements Runnable {
+
+        private volatile int i = 1;
+
+        @Override
+        public void run() {
+            System.out.print("任务" + (i++) + "完成");
+        }
+    }
+
+
 }

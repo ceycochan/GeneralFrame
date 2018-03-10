@@ -6,8 +6,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo.State;
 import android.net.NetworkInfo;
+import android.net.NetworkInfo.State;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -35,19 +35,12 @@ import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
-    private static final String TAG = "cg";
+    private static final String TAG = "dax";
     private ViewPager mViewPager;
     private List<String> mTitles;
     private List<Fragment> mFragments = new ArrayList<>();
     private FragmentPagerAdapter mPagerAdapter;
-
     public static BottomIndicator mIndicator;
-    public static boolean onLoadAllConvertsationOverFlag = false;
-
-    public static int intoChatCount = 0;
-    public static int pickBottleCount = 0;
-    public static int intoUserPageCount = 0;
-    public static int viewPicCount = 0;
 
 
     /**
@@ -121,8 +114,7 @@ public class MainActivity extends BaseActivity {
                             mCount = 0;
                         }
 
-
-                    } else if (position == 0) { // 其他碎片转入瓶子碎片加载系统通知消息
+                    } else if (position == 0) { // 其他碎片转入的信息
                         mCount++;
                         if (mCount == 4) {
                             EventBus.getDefault().post(new EventUtil("bottle"));
@@ -173,7 +165,9 @@ public class MainActivity extends BaseActivity {
 
         if (manager.getActiveNetworkInfo() != null) {
             flag = manager.getActiveNetworkInfo().isAvailable();
+
         }
+
 
         if (!flag) {
             //不可用&去设置网络
@@ -184,8 +178,9 @@ public class MainActivity extends BaseActivity {
         }
 
         return flag;
-    }
 
+
+    }
 
     /**
      * 网络处于连接状态
@@ -211,12 +206,11 @@ public class MainActivity extends BaseActivity {
     /**
      * 设置网络
      */
-
     private void setNetWork() {
         Toast.makeText(this, "wifi is closed", Toast.LENGTH_SHORT).show();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setIcon(R.mipmap.ic_launcher);
-        builder.setTitle("网络提示信息");
+//        builder.setIcon(R.mipmap.ic_launcher);
+//        builder.setTitle("网络提示信息");
         builder.setMessage("网络不可用，如果继续，请先设置网络！");
         builder.setPositiveButton("设置", new DialogInterface.OnClickListener() {
             @Override

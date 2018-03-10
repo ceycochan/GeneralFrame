@@ -75,7 +75,124 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="13dp"
-                    android:text="UserInfo"
+                    android:text="Debug Log"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/btn_set_further" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_thread_pool_test"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/bg_press_select_fragment"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:src="@mipmap/ic_launcher_round" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="13dp"
+                    android:text="Thread Pool Trail"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/btn_set_further" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_update_related"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/bg_press_select_fragment"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:src="@mipmap/ic_launcher_round" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="13dp"
+                    android:text="Update Related"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/btn_set_further" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_network_monitoring"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/bg_press_select_fragment"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:src="@mipmap/ic_launcher_round" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="13dp"
+                    android:text="Network Monitoring"
                     android:textSize="16sp" />
 
                 <View
@@ -94,6 +211,8 @@
 
 
         </LinearLayout>
+
+
     </ScrollView>
 
 </LinearLayout>
