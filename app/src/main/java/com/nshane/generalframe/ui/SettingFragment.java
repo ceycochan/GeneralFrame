@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.jwenfeng.library.pulltorefresh.BaseRefreshListener;
+import com.jwenfeng.library.pulltorefresh.PullToRefreshLayout;
 import com.nshane.generalframe.R;
 import com.nshane.generalframe.http.MyTask;
 import com.nshane.generalframe.interfaces.IPresenter;
@@ -47,8 +49,15 @@ public class SettingFragment extends AbsFragment {
     @BindView(R.id.ll_network_monitoring)
     LinearLayout llNetworkMonitoring;
 
+    @BindView(R.id.ptr_main)
+    PullToRefreshLayout ptrMain;
 
     private String gpPkg = "com.android.vending";
+
+
+    private int x = 0;
+
+    private int y = 0;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,6 +71,48 @@ public class SettingFragment extends AbsFragment {
 
         View rootView = super.onCreateView(inflater, container);
         ButterKnife.bind(this, rootView);
+
+
+        // TODO: 2018-3-10 初始化下拉和加载更多
+        ptrMain.setHeadHeight(60);
+//        ptrMain.setCanLoadMore(false);
+
+
+        LogUtil.d("dax");
+
+        ptrMain.setRefreshListener(new BaseRefreshListener() {
+            @Override
+            public void refresh() {
+
+                x++;
+
+                LogUtil.d("dax", "刷新:" + x);
+
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ptrMain.finishRefresh();
+                    }
+                }, 2000);
+            }
+
+            @Override
+            public void loadMore() {
+
+                y++;
+
+                LogUtil.d("dax", "更多:" + y);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ptrMain.finishLoadMore();
+                    }
+                }, 2000);
+            }
+        });
+
         return rootView;
     }
 
@@ -109,6 +160,7 @@ public class SettingFragment extends AbsFragment {
 
     @Override
     public void initView() {
+
 
     }
 

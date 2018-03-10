@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.jwenfeng.library.pulltorefresh.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ptr_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EBECEB"
@@ -7,8 +8,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -215,4 +215,4 @@
 
     </ScrollView>
 
-</LinearLayout>
+</com.jwenfeng.library.pulltorefresh.PullToRefreshLayout>
