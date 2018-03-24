@@ -185,7 +185,7 @@ public class MainActivity extends BaseActivity {
                     } else if (position == 0) { // 其他碎片转入的信息
                         mCount++;
 
-                        LogUtil.d("cg","My");
+                        LogUtil.d("cg","HHE");
 
                         if (mCount == 4) {
                             EventBus.getDefault().post(new EventUtil("bottle"));
