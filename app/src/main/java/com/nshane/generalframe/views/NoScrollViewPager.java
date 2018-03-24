@@ -1,4 +1,4 @@
-package com.nshane.generalframe.adapters;
+package com.nshane.generalframe.views;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
@@ -39,9 +39,7 @@ public class NoScrollViewPager extends ViewPager {
     /**
      * 是否消费事件
      * 消费: 事件结束 or 不消费: 往父类空间传
-     *
      */
-
     @Override
     public boolean onTouchEvent(MotionEvent arg0) {
         /* return false;//super.onTouchEvent(arg0); */

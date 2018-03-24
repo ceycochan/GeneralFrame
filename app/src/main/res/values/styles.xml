@@ -1,47 +1,50 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+
     </style>
+
+
+    <style name="PurpleTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/colorPurplePrimary</item>
+        <item name="colorPrimaryDark">@color/colorPurplePrimaryDark</item>
+        <item name="colorAccent">@color/colorPurplePrimaryDark</item>
+        <item name="menuBackground">@drawable/purple_background</item>
+    </style>
+
+
+
+
+    <style name="MenuStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">25dp</item>
+        <item name="android:layout_marginBottom">1dp</item>
+        <item name="android:layout_marginRight">80dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
 
     <style name="AppCompatDialog" parent="Theme.AppCompat.Dialog">
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorBluePrimary</item>
+        <item name="colorPrimaryDark">@color/colorBluePrimaryDark</item>
+        <item name="colorAccent">@color/colorBluePrimaryDark</item>
+        <item name="menuBackground">@drawable/purple_background</item>
+        <!--<item name="md_title_color">@color/colorBluePrimary</item>-->
+        <!--<item name="md_link_color">@color/colorBluePrimary</item>-->
+        <!--<item name="md_positive_color">@color/colorBluePrimary</item>-->
     </style>
 
 
-    <!--<style name="SettingFurtherIcon">-->
-        <!--<item name="android:layout_width">8dp</item>-->
-        <!--<item name="android:layout_height">16dp</item>-->
-        <!--<item name="android:layout_marginRight">15dp</item>-->
-        <!--<item name="android:src">@drawable/btn_set_further</item>-->
-        <!--<item name="android:layout_gravity">center_vertical</item>-->
-    <!--</style>-->
 
-    <!--<style name="SettingLeftIcon">-->
-        <!--<item name="android:layout_width">20dp</item>-->
-        <!--<item name="android:layout_height">20dp</item>-->
-        <!--<item name="android:layout_gravity">center_vertical</item>-->
-        <!--<item name="android:layout_marginLeft">20dp</item>-->
-    <!--</style>-->
 
-    <!--<style name="SettingLeftTextView">-->
-        <!--<item name="android:layout_width">wrap_content</item>-->
-        <!--<item name="android:layout_height">wrap_content</item>-->
-        <!--<item name="android:layout_gravity">center_vertical</item>-->
-        <!--<item name="android:layout_marginLeft">13dp</item>-->
-        <!--<item name="android:textSize">14sp</item>-->
-    <!--</style>-->
-
-    <!--<style name="SettingItemDivider">-->
-        <!--<item name="android:layout_width">0dp</item>-->
-        <!--<item name="android:layout_height">1dp</item>-->
-        <!--<item name="android:layout_weight">1</item>-->
-    <!--</style>-->
 
 </resources>

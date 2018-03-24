@@ -1,4 +1,4 @@
-package com.nshane.generalframe.ui;
+package com.nshane.generalframe.ui.activities;
 
 import android.content.Context;
 import android.content.Intent;

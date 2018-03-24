@@ -1,4 +1,4 @@
-package com.nshane.generalframe.ui;
+package com.nshane.generalframe.ui.fragments;
 
 import android.app.Activity;
 import android.content.Context;

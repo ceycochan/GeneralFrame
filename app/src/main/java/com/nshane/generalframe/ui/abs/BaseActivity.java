@@ -76,8 +76,6 @@ public abstract class BaseActivity extends AppCompatActivity implements IView {
     @Override
     protected void onResume() {
         super.onResume();
-        //MobclickAgent.onResume(this);
-        //MobclickAgent.onPageStart(this.getClass().getName());
         for (IPresenter presenter : mAllPresenters) {
             if (presenter != null) {
                 presenter.onResume();

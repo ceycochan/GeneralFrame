@@ -1,4 +1,4 @@
-package com.nshane.generalframe.ui;
+package com.nshane.generalframe.ui.fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -17,7 +17,9 @@ import com.jwenfeng.library.pulltorefresh.PullToRefreshLayout;
 import com.nshane.generalframe.R;
 import com.nshane.generalframe.http.MyTask;
 import com.nshane.generalframe.interfaces.IPresenter;
+import com.nshane.generalframe.ui.activities.NetworkStateActivity;
 import com.nshane.generalframe.ui.abs.AbsFragment;
+import com.nshane.generalframe.ui.activities.UpdateActivity;
 import com.nshane.generalframe.utils.Constants;
 import com.nshane.generalframe.utils.FileUtil;
 import com.nshane.generalframe.utils.LogUtil;
@@ -372,6 +374,7 @@ public class SettingFragment extends AbsFragment {
             System.out.print("任务" + (i++) + "完成");
         }
     }
+
 
 
 }

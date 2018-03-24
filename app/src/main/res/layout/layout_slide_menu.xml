@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.nshane.generalframe.theme.ColorRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/menuBackground">
+
+    <LinearLayout
+        android:id="@+id/top_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/ic_avatar" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="80dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="10dp"
+            android:text="苍老师"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_menu"
+        android:layout_below="@id/top_menu"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/all"
+                style="@style/MenuStyle"
+                android:text="@string/all" />
+
+            <TextView
+                android:id="@+id/fuli"
+                style="@style/MenuStyle"
+                android:text="@string/fuli" />
+
+            <TextView
+                android:id="@+id/android"
+                style="@style/MenuStyle"
+                android:text="@string/android" />
+
+            <TextView
+                android:id="@+id/ios"
+                style="@style/MenuStyle"
+                android:text="@string/ios" />
+
+            <TextView
+                android:id="@+id/video"
+                style="@style/MenuStyle"
+                android:text="@string/video" />
+
+            <TextView
+                android:id="@+id/front"
+                style="@style/MenuStyle"
+                android:text="@string/front" />
+
+            <TextView
+                android:id="@+id/resource"
+                style="@style/MenuStyle"
+                android:text="@string/resource" />
+
+            <TextView
+                android:id="@+id/app"
+                style="@style/MenuStyle"
+                android:text="@string/app" />
+
+            <TextView
+                android:id="@+id/more"
+                style="@style/MenuStyle"
+                android:text="@string/more" />
+
+            <TextView
+                android:id="@+id/test1"
+                style="@style/MenuStyle"
+                android:text="彩蛋测试1" />
+
+
+            <TextView
+                android:id="@+id/test2"
+                style="@style/MenuStyle"
+                android:text="彩蛋测试2" />
+
+            <TextView
+                android:id="@+id/test3"
+                style="@style/MenuStyle"
+                android:text="彩蛋测试3" />
+
+
+            <TextView
+                android:id="@+id/test4"
+                style="@style/MenuStyle"
+                android:text="彩蛋测试4" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:padding="12dp"
+            android:text="关于"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:padding="12dp"
+            android:text="主题"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+</com.nshane.generalframe.theme.ColorRelativeLayout>

@@ -1,4 +1,4 @@
-package com.nshane.generalframe.ui;
+package com.nshane.generalframe.ui.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -52,7 +52,7 @@ public class MyFragment extends AbsFragment {
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.fragment_my;
+        return R.layout.fragment_chat;
     }
 
     @Override

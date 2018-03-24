@@ -8,7 +8,6 @@ import android.provider.BaseColumns;
 
 public class DBMetaData {
 
-
     /**
      * Remarks:
      * <p>

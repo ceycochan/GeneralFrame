@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_main"
+<com.nshane.generalframe.views.ResideLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_rl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".ui.MainActivity">
 
+    <include
+        android:id="@+id/slide_menu"
+        layout="@layout/layout_slide_menu" />
 
-    <!--V4下ViewPager可滑动-->
-    <com.nshane.generalframe.adapters.NoScrollViewPager
-        android:id="@+id/id_viewPager"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
 
 
-    </com.nshane.generalframe.adapters.NoScrollViewPager>
-    <!--底部需要加背景-->
-    <com.nshane.generalframe.views.BottomIndicator
-        android:id="@+id/id_bottom_indicator"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@drawable/bg_tab_bottom" />
+        <com.nshane.generalframe.theme.ColorView
+            android:id="@+id/status_bar"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="?attr/colorPrimary" />
 
 
-</LinearLayout>
+        <include layout="@layout/layout_main_toolbar" />
+
+        <!--使用原生ViewPager可滑动-->
+        <com.nshane.generalframe.views.NoScrollViewPager
+            android:id="@+id/id_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        </com.nshane.generalframe.views.NoScrollViewPager>
+        <!--底部需要加背景-->
+        <!--android:background="@drawable/bg_tab_bottom"-->
+        <com.nshane.generalframe.views.BottomIndicator
+            android:id="@+id/id_bottom_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="?attr/colorPrimary" />
+
+    </LinearLayout>
+
+</com.nshane.generalframe.views.ResideLayout>

@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.StrictMode;
 import android.support.multidex.MultiDex;
 
+import com.nshane.generalframe.utils.LogUtil;
 import com.nshane.generalframe.utils.SharePreferenceManager;
 
 import java.util.Iterator;
@@ -43,15 +44,7 @@ public class GeneralFrameApplication extends Application {
         //init demo helperappContext = this;
         int pid = android.os.Process.myPid();
         String processAppName = getAppName(pid);
-        // 如果APP启用了远程的service，此application:onCreate会被调用2次
-        // 为了防止环信SDK被初始化2次，加此判断会保证SDK被初始化1次
-        // 默认的app会在以包名为默认的process name下运行，如果     查到的process name不是APP的process name就立即返回
-        if (processAppName == null || !processAppName.equalsIgnoreCase(this.getPackageName())) {
-            //"com.easemob.chatuidemo"为demo的包名，换到自己项目中要改成自己包名
-            // 则此application::onCreate 是被service 调用的，直接返回
-            return;
-        }
-
+        LogUtil.d("dax", "进程名:" + processAppName);
         userFBId = SharePreferenceManager.getString(context,
                 SharePreferenceManager.FBInfoXml.XML_NAME,
                 SharePreferenceManager.FBInfoXml.KEY_FACEBOOK_UID.key, SharePreferenceManager.FBInfoXml.KEY_FACEBOOK_UID.defaultValue);
