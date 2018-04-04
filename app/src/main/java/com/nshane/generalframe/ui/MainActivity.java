@@ -26,7 +26,7 @@ import com.nshane.generalframe.theme.ColorView;
 import com.nshane.generalframe.ui.abs.BaseActivity;
 import com.nshane.generalframe.ui.fragments.GroupsFragment;
 import com.nshane.generalframe.ui.fragments.HomeFragment;
-import com.nshane.generalframe.ui.fragments.MyFragment;
+import com.nshane.generalframe.ui.fragments.SearchFragment;
 import com.nshane.generalframe.ui.fragments.SettingFragment;
 import com.nshane.generalframe.utils.Constants;
 import com.nshane.generalframe.utils.EventUtil;
@@ -151,8 +151,8 @@ public class MainActivity extends BaseActivity {
                 HomeFragment mHomeFragment = new HomeFragment();
                 mFragments.add(mHomeFragment);
             } else if (title.equals(getResources().getString(R.string.btn_center_chat))) {
-                MyFragment mMyFragment = new MyFragment();
-                mFragments.add(mMyFragment);
+                SearchFragment mSearchFragment = new SearchFragment();
+                mFragments.add(mSearchFragment);
             }
 
 
@@ -175,7 +175,7 @@ public class MainActivity extends BaseActivity {
                 @Override
                 public void onPageSelected(int position) {
                     if (position == 2) {
-                        LogUtil.d("cg","Chat");
+                        LogUtil.d("cg", "Chat");
                         mCount++;
                         if (mCount == 4) {
                             EventBus.getDefault().post(new EventUtil("setting"));
@@ -185,7 +185,7 @@ public class MainActivity extends BaseActivity {
                     } else if (position == 0) { // 其他碎片转入的信息
                         mCount++;
 
-                        LogUtil.d("cg","HHE");
+                        LogUtil.d("cg", "HHE");
 
                         if (mCount == 4) {
                             EventBus.getDefault().post(new EventUtil("bottle"));

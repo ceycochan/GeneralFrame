@@ -18,7 +18,7 @@ import java.util.Set;
  * Created by bryan on 2017-12-21.
  */
 
-// fragment base class
+// fragment base class  // Fragment base class
 public abstract class AbsFragment extends Fragment implements IView {
 
     private Set<IPresenter> mAllPresenters = new HashSet<IPresenter>(1);

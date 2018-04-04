@@ -53,9 +53,9 @@ public class UpdateActivity extends BaseActivity {
 
     private void initCurrentVersion() {
 
-        int version= Utils.getVersionCode(this);
+        int version = Utils.getVersionCode(this);
 
-        tvVersion.setText(String.format(getString(R.string.tip_version),version));
+        tvVersion.setText(String.format(getString(R.string.tip_version), version));
 
     }
 

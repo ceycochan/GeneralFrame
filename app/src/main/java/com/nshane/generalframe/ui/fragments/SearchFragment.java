@@ -1,8 +1,8 @@
 package com.nshane.generalframe.ui.fragments;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,47 +12,32 @@ import com.nshane.generalframe.interfaces.IPresenter;
 import com.nshane.generalframe.ui.abs.AbsFragment;
 import com.nshane.generalframe.utils.LogUtil;
 
+import butterknife.ButterKnife;
+
 
 /**
  * Created by lzz on 2017/6/30.
  */
-public class MyFragment extends AbsFragment {
+public class SearchFragment extends AbsFragment {
 
+    private Resources resources;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = super.onCreateView(inflater, container);
-        Toolbar mTb = (Toolbar) rootView.findViewById(R.id.tb_toolbar);
-        mTb.setTitle(getString(R.string.btn_center_chat));
-        mTb.setTitleTextColor(getResources().getColor(R.color.colorToolBarBText));
-        initHeader(rootView);
-        initMeetU(rootView);
+
+        ButterKnife.bind(this, rootView);
+
+        resources = getResources();
+
         return rootView;
     }
-
-    private void initHeader(View rootView) {
-
-    }
-
-
-    private int mMeetUPage = 1;
-    private int mFollowBottlePage = 1;
-    private boolean mMeetUPage1 = false;
-    private boolean mFoolowBootlePage1 = false;
-
-    private void initMeetU(View rootView) {
-
-
-    }
-
-
-
 
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.fragment_chat;
+        return R.layout.fragment_search;
     }
 
     @Override
@@ -69,7 +54,6 @@ public class MyFragment extends AbsFragment {
     public void initView() {
 
     }
-
 
 
     private boolean flags = true;
