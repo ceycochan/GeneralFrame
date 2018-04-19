@@ -14,6 +14,9 @@ import java.util.List;
  * Created by bryan on 2018-1-27.
  */
 
+
+// useless class at per'se
+
 public class SearchHistoryService {
     private DBOpenHelper mHelper;
 
@@ -46,9 +49,9 @@ public class SearchHistoryService {
      * public Cursor query(String table, String[] columns, String selection,
      * String[] selectionArgs, String groupBy, String having,
      * String orderBy) {
-     *
-     *
-     *
+     * <p>
+     * <p>
+     * <p>
      * table：指定查询的表名，对应：from table_name
      * columns：指定查询的列名，对应select column1, column2
      * selection：指定where 的约束条件，对应：where column = value

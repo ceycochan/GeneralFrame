@@ -1,4 +1,4 @@
-package com.nshane.generalframe.models;
+package com.nshane.generalframe.models.entity;
 
 import android.text.TextUtils;
 

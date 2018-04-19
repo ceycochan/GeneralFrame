@@ -31,7 +31,7 @@ public class DBMetaData {
         public static final String USER_PASSWORD = "password";
         public static final String USER_GENDER = "gender";
 
-//
+        //
         public static final String SQL_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + BaseColumns._ID
                 + "INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + USER_NAME + "VARCHAR(50),"
