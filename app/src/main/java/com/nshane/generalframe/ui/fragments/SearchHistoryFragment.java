@@ -23,7 +23,7 @@ public class SearchHistoryFragment extends Fragment {
         if (null == rootView) {
             rootView = inflater.inflate(R.layout.fragment_search_history, container, false);
         } else {
-            //防止重新加载,导致出现闪退
+            //防止重新加载,导致出现闪退 /
             if (null != rootView) {
                 ViewGroup parent = (ViewGroup) rootView.getParent();
                 if (null != parent) {
