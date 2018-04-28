@@ -1,4 +1,4 @@
-package com.nshane.generalframe.db;
+package com.nshane.generalframe.models.entity;
 
 import android.provider.BaseColumns;
 
@@ -20,18 +20,17 @@ public class DBMetaData {
      * 4.version at least is 1
      */
 
-    public static final String DATABASE_NAME = "shane.db";
-    public static final int DATABASE_VERSION = 1;  //at least version 1
+    public static final String DATABASE_NAME = "nshane.db";
+    // version code should be "1" at least
+    public static final int DATABASE_VERSION = 1;
 
 
-    public static final class FriendTableMetaData {
+    public static final class FriendsMetaData {
         public static final String TABLE_NAME = "friend";
-
         public static final String USER_NAME = "name";
         public static final String USER_PASSWORD = "password";
         public static final String USER_GENDER = "gender";
 
-        //
         public static final String SQL_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(" + BaseColumns._ID
                 + "INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + USER_NAME + "VARCHAR(50),"
@@ -44,7 +43,7 @@ public class DBMetaData {
 
     public static final class SearchHistoryMetaData {
         public static final String TABLE_NAME = "history";
-        public static final String SERACH_HISTROY = "histroy";
+        public static final String SERACH_HISTROY = "history";
 
         public static final String SQL_CREATE_TABLE = "create table if not exists " + TABLE_NAME + "(" + BaseColumns._ID
                 + "integer primary key autoincrement,"

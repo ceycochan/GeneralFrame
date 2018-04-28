@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.nshane.generalframe.models.entity.DBMetaData;
 import com.nshane.generalframe.utils.LogUtil;
 
 /**
@@ -33,7 +34,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DBMetaData.SearchHistoryMetaData.SQL_CREATE_TABLE);
-        db.execSQL(DBMetaData.FriendTableMetaData.SQL_CREATE_TABLE);
+        db.execSQL(DBMetaData.FriendsMetaData.SQL_CREATE_TABLE);
         LogUtil.d("cg", "db---onCreate()");
     }
 
@@ -47,7 +48,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + DBMetaData.FriendTableMetaData.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + DBMetaData.FriendsMetaData.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + DBMetaData.SearchHistoryMetaData.TABLE_NAME);
     }
 

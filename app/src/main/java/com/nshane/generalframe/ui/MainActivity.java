@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.nshane.generalframe.R;
-import com.nshane.generalframe.adapters.TopViewPagerAdapter;
+import com.nshane.generalframe.ui.adapters.TopViewPagerAdapter;
 import com.nshane.generalframe.interfaces.IPresenter;
 import com.nshane.generalframe.theme.ColorView;
 import com.nshane.generalframe.ui.abs.BaseActivity;

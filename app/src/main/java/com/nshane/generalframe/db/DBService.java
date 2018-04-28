@@ -6,7 +6,7 @@ package com.nshane.generalframe.db;
 
 public class DBService {
 
-    // operating service
+    // database operating
 
 
 

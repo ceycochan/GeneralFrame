@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.nshane.generalframe.db.DBMetaData;
+import com.nshane.generalframe.models.entity.DBMetaData;
 import com.nshane.generalframe.db.DBOpenHelper;
 
 import java.util.ArrayList;
